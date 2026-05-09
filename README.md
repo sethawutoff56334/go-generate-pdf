@@ -8,7 +8,7 @@ Go module: chromedp
 
 ## The Reason: chromedp
 
-1. **Render ได้เหมือนเบราว์เซอร์จริง** — รองรับ CSS ครบถ้วน (Flexbox, Grid, Web Fonts) ไม่ต้องกังวลว่า layout จะเพี้ยน
+1. **Render ได้เหมือนเบราว์เซอร์จริง** — รองรับ CSS ครบถ้วน ไม่ต้องกังวลว่า layout จะเพี้ยน
 2. **รองรับภาษาไทยได้ดี** — ใช้ font rendering ของ Chrome โดยตรง ไม่ต้องหา font เอง
 3. **ใช้ HTML/CSS เป็น template** — ออกแบบหน้าตาเอกสารได้ง่าย แก้ไข style ได้สะดวก ไม่ต้องวาด PDF ทีละ element
 
