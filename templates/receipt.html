@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ใบเสร็จรับเงิน - {{.ReceiptNo}}</title>
+    <style>{{.CSS}}</style>
+</head>
+<body>
+    <div class="receipt">
+        <div class="header">
+            <h1>ใบเสร็จรับเงิน</h1>
+            <p class="receipt-no">เลขที่: {{.ReceiptNo}}</p>
+        </div>
+
+        <div class="customer-info">
+            <h3>ข้อมูลลูกค้า</h3>
+            <p><strong>ชื่อ:</strong> {{.Customer.FirstName}} {{.Customer.LastName}}</p>
+            <p><strong>อีเมล:</strong> {{.Customer.Email}}</p>
+            <p><strong>เบอร์โทร:</strong> {{formatPhone .Customer.PhoneNo}}</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:5%">#</th>
+                    <th style="width:45%; text-align:left;">สินค้า</th>
+                    <th style="width:17%">ราคา/หน่วย</th>
+                    <th style="width:15%">จำนวน</th>
+                    <th style="width:18%">รวม</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{range $i, $p := .ProductList}}
+                <tr>
+                    <td>{{inc $i}}</td>
+                    <td style="text-align:left;">{{$p.ProductName}}</td>
+                    <td>{{formatMoney $p.PricePerUnit}}</td>
+                    <td>{{$p.Qty}}</td>
+                    <td>{{formatMoney (multiply $p.Qty $p.PricePerUnit)}}</td>
+                </tr>
+                {{end}}
+            </tbody>
+        </table>
+
+        <div class="summary">
+            <div class="summary-row">
+                <span>ยอดรวมสินค้า</span>
+                <span>{{formatMoney .PricingSummary.SubTotal}} บาท</span>
+            </div>
+            <div class="summary-row discount">
+                <span>ส่วนลด</span>
+                <span>-{{formatMoney .PricingSummary.Discount}} บาท</span>
+            </div>
+            <div class="summary-row total">
+                <span>ยอดชำระทั้งสิ้น</span>
+                <span>{{formatMoney .PricingSummary.Total}} บาท</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>ขอบคุณที่ใช้บริการ</p>
+        </div>
+    </div>
+</body>
+</html>

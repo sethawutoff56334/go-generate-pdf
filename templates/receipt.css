@@ -1,0 +1,68 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Sarabun', 'Noto Sans Thai', sans-serif;
+    font-size: 14px;
+    color: #333;
+    padding: 40px;
+    background: #fff;
+}
+
+.receipt {
+    max-width: 700px;
+    margin: 0 auto;
+    border: 2px solid #333;
+    padding: 30px;
+}
+
+.header {
+    text-align: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.header h1 { font-size: 24px; margin-bottom: 5px; }
+.header .receipt-no { font-size: 16px; color: #555; }
+
+.customer-info {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+.customer-info h3 { margin-bottom: 10px; font-size: 16px; }
+.customer-info p { margin-bottom: 4px; }
+
+table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+th, td { padding: 10px 8px; border-bottom: 1px solid #ddd; text-align: center; }
+th { background: #f0f0f0; font-weight: bold; }
+tbody tr:hover { background: #fafafa; }
+
+.summary { margin-top: 10px; border-top: 2px solid #333; padding-top: 15px; }
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 15px;
+}
+
+.summary-row.discount { color: #e74c3c; }
+
+.summary-row.total {
+    font-size: 18px;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    margin-top: 5px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px dashed #999;
+    color: #777;
+}
