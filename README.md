@@ -40,8 +40,7 @@ go run main.go
 ```bash
 curl -X POST http://localhost:8080/generate-pdf \
   -H "Content-Type: application/json" \
-  -d @example.json \
-  --output receipt.pdf && open -a "Google Chrome" receipt.pdf
+  -d @example.json
 ```
 
 **ใส่ JSON ตรงๆ ในคำสั่ง:**
